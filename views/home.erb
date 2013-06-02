@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Twitter Client</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="/stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+  <link rel="icon" type="image/ico" href="/favicon.ico" />
+</head>
+<body>
+	<div id = "wrapper">
+
+		<div id = "header">
+			<h1><a href="/" target="_self" >Twitter</a></h1>
+		</div>
+
+		<div id = "content">    
+
+			<%if session[:user]%>
+			<ul>
+				<li><a href="/" target="_self" >home</a></li>
+				<li><a href="/mentions" target="_self" >mentions</a></li>
+				<li><a href="/logout" target="_self" >logout</a></li>
+			</ul>
+			<p>What happen?</p>
+			<form action="/update" method="post">
+				<textarea name="tweet" cols=120 row=3></textarea>
+				<input type="submit" value="tweet"/>
+			</form>
+
+			<% else %>
+
+			<h2><a href="/connect" target="_self" >connect</a></h2>
+			<%end %>
+
+
+			<% for tweet in @tweets %>
+			<div class ="tweets">
+				<img src="<%=tweet['user']['profile_image_url'] %>" />
+				<p><span class="name"><a href="/<%=tweet['user']['screen_name']%>"><%= tweet['user']['screen_name']%></a></span> 
+					<%= twitter_text(tweet['text']) %><p>
+					</div>
+					<% end %>
+
+				</div>
+			</div>
+		</body>
+		<html>

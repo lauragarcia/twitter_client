@@ -1,0 +1,68 @@
+body{
+    background:  url("../images/background.jpg") #C0DEED repeat-x;
+
+    margin: 0;
+    padding: 0;
+    
+}
+
+a{
+    text-decoration: none;
+   
+}
+
+#wrapper{
+    
+  
+     margin: 0;
+    padding: 0;
+    
+}
+#header h1{
+    margin-left: 15%;
+}
+#header h1 a{
+    background: url("../images/twitter-logo.png") no-repeat;
+    display: block;
+     height: 128px;
+     text-indent: -9999px;
+    width: 128px;
+}
+
+
+#content{
+    background: #ffffff;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: 2px solid dotted;
+    -moz-border-radius: 15px;
+   -webkit-border-radius: 15px;
+   padding: 0 100px;
+   padding-bottom: 10px;
+    width: 980px;
+}
+
+ #content ul  li{
+    display: inline;
+    list-style: none;
+}
+
+.tweets{
+    border-bottom: #cfcfcf thin solid ;
+    padding: 15px 0;
+    
+    clear: both;
+}
+
+.tweets img{
+    width: 48px;
+    float: left;    
+    padding-right: 10px;
+}
+.tweets p{
+    margin-top: 0;
+}
+
+.name{
+    font-weight: bold;
+}
